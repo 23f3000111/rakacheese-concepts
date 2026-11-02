@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raka Cheese | Two website concepts</title>
+<meta name="description" content="Two website concepts for Raka Cheese, finest Kenyan cheese from the Nyeri highlands: an editorial direction and a fun direction.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="shared/img/favicon.png">
+<link rel="apple-touch-icon" href="shared/img/apple-touch-icon.png">
+<link rel="preload" href="shared/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="shared/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: 'Archivo'; src: url('shared/fonts/archivo.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
+  @font-face { font-family: 'Bricolage Grotesque'; src: url('shared/fonts/bricolage.woff2') format('woff2'); font-weight: 200 800; font-stretch: 75% 100%; font-display: swap; }
+  @font-face { font-family: 'DM Sans'; src: url('shared/fonts/dm-sans.woff2') format('woff2'); font-weight: 100 1000; font-display: swap; }
+  @font-face { font-family: 'DM Mono'; src: url('shared/fonts/dm-mono-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  :root { --ink: #2A1B12; --text: #5C4A3D; --cream: #FFF7E6; --sun: #FFC933; --red: #EE4423; --tomato: #E5381C; --ease: cubic-bezier(.16, 1, .3, 1); --spring: cubic-bezier(.3, 1.5, .5, 1); }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: var(--cream); color: var(--text); font: 450 17px/1.55 'DM Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { display: block; max-width: 100%; height: auto; }
+  .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+  .bg i { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .55; animation: drift 18s ease-in-out infinite alternate; }
+  .bg i:nth-child(1) { width: 520px; height: 520px; left: -140px; top: -160px; background: var(--sun); }
+  .bg i:nth-child(2) { width: 460px; height: 460px; right: -120px; top: 30%; background: #FFB199; animation-duration: 22s; }
+  .bg i:nth-child(3) { width: 380px; height: 380px; left: 30%; bottom: -220px; background: #FFE08A; animation-duration: 26s; }
+  @keyframes drift { to { transform: translate(60px, 40px) scale(1.12); } }
+  .wrap { width: min(1260px, 100% - 64px); margin: 0 auto; padding: 34px 0 56px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .brand img { width: 150px; filter: drop-shadow(0 8px 12px rgba(160, 90, 0, .25)); }
+  .brand strong { display: block; font: 700 18px/1.2 'DM Sans', sans-serif; color: var(--ink); }
+  .brand span { font-size: 14px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 16px; border-radius: 999px; background: #fff; font: 600 13.5px/1 'DM Sans', sans-serif; color: var(--ink); box-shadow: 0 6px 18px -10px rgba(80, 40, 10, .35); }
+  .chip i { width: 8px; height: 8px; border-radius: 50%; background: #25D366; box-shadow: 0 0 0 0 rgba(37, 211, 102, .6); animation: ping 1.8s infinite; }
+  @keyframes ping { 70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); } }
+  h1 { margin: 54px 0 0; max-width: 17ch; font: 900 clamp(54px, 6.6vw, 104px)/.86 'Archivo', sans-serif; font-stretch: 62%; text-transform: uppercase; letter-spacing: -.01em; color: var(--ink); }
+  h1 span { color: var(--red); }
+  .intro { margin: 22px 0 0; max-width: 64ch; font-size: 18.5px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 46px; }
+  .card { position: relative; display: flex; flex-direction: column; border-radius: 30px; background: #fff; color: inherit; text-decoration: none; overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(40, 18, 10, .05), 0 12px 24px -12px rgba(80, 40, 10, .2), 0 50px 70px -40px rgba(80, 40, 10, .45);
+    transform: perspective(1200px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px)); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+  .card:hover, .card:focus-visible { --lift: -10px; }
+  .card:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
+  .shot { position: relative; margin: 12px 12px 0; border-radius: 20px; overflow: hidden; aspect-ratio: 16 / 10; background: #f4ece0; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 1.2s var(--ease); }
+  .card:hover .shot img { transform: scale(1.045); }
+  .shot b { position: absolute; left: 14px; top: 14px; padding: 8px 12px; border-radius: 999px; background: rgba(255, 255, 255, .92); font: 600 12.5px/1 'DM Sans', sans-serif; color: var(--ink); }
+  .body { display: grid; gap: 10px; padding: 24px 28px 28px; }
+  .label { font: 500 13px/1 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .1em; color: #8A7868; }
+  .title { font: 900 52px/.86 'Archivo', sans-serif; font-stretch: 62%; text-transform: uppercase; color: var(--ink); }
+  .card--b .title { font: 800 54px/.9 'Bricolage Grotesque', sans-serif; text-transform: none; letter-spacing: -.045em; color: var(--tomato); }
+  .desc { font-size: 16px; max-width: 52ch; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags span { padding: 6px 11px; border-radius: 999px; background: #FFF4DC; font: 600 12.5px/1 'DM Sans', sans-serif; color: var(--ink); }
+  .go { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; width: max-content; height: 50px; padding: 0 24px; color: #fff; background: var(--red);
+    font: 700 13px/1 'Archivo', sans-serif; letter-spacing: .08em; text-transform: uppercase; transition: gap .3s var(--spring); }
+  .card--b .go { background: var(--tomato); border-radius: 999px; font: 650 16px/1 'DM Sans', sans-serif; letter-spacing: 0; text-transform: none; }
+  .card:hover .go { gap: 16px; }
+  .shared { margin-top: 46px; padding: 24px 28px; border-radius: 24px; background: rgba(255, 255, 255, .7); display: grid; grid-template-columns: auto 1fr; gap: 10px 26px; align-items: start; }
+  .shared strong { font: 700 15px/1.4 'DM Sans', sans-serif; color: var(--ink); }
+  .shared ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; }
+  .shared li::before { content: '\2713'; margin-right: 7px; color: #1FA855; font-weight: 700; }
+  footer { margin-top: 30px; font-size: 13.5px; color: #8A7868; }
+  @media (max-width: 900px) { .grid, .shared { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .bg i, .chip i { animation: none; } .card, .shot img, .go { transition: none; } }
+</style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <header>
+      <div class="brand"><img src="shared/img/logo/raka-mark.webp" alt="Raka" width="802" height="269"><div><strong>Raka Cheese</strong><span>Website concepts &middot; November 2026</span></div></div>
+      <span class="chip"><i></i>Both concepts are live and working</span>
+    </header>
+    <h1>Two ways to make Kenya <span>hungry for Raka</span></h1>
+    <p class="intro">Both concepts carry the same content and features: the full Raka range with real packs, melting-cheese photography and video, twelve recipes, Kalpa&rsquo;s grazing boards, a cheese list that orders on WhatsApp, a WhatsApp-style chat assistant, the map to the factory shop in Rware and Raka&rsquo;s socials. They differ in look and in how they move, so you can choose how Raka greets its customers.</p>
+    <div class="grid">
+      <a class="card" href="site-a-editorial/">
+        <span class="shot"><img src="shared/img/chooser-a.webp" alt="Preview of the editorial concept: RAKA CHEESE in tall capitals beside a video of a pizza slice stretching" width="1440" height="900"><b>Concept A</b></span>
+        <span class="body">
+          <span class="label">After Santo Mare, made bright</span>
+          <span class="title">Editorial</span>
+          <span class="desc">Confident and premium. Tall capitals, mono labels and full-colour bands in red, blue, green and butter. Recipes travel past as turning plates, a list of cheeses swaps the picture as you point, and five moods play like a film.</span>
+          <span class="tags"><span>Pinned plate parade</span><span>Cheese drip band</span><span>Mood film</span><span>Order bar</span></span>
+          <span class="go">Open the editorial site &rarr;</span>
+        </span>
+      </a>
+      <a class="card card--b" href="site-b-fun/">
+        <span class="shot"><img src="shared/img/chooser-b.webp" alt="Preview of the fun concept: Ra and ka either side of a turning margherita on sunny yellow, with cheese floating around" width="1440" height="900"><b>Concept B</b></span>
+        <span class="body">
+          <span class="label">After Ruota and Palazzo, sunny</span>
+          <span class="title">Fun</span>
+          <span class="desc">Loud, warm and playful on Raka&rsquo;s own yellow and tomato red. A wooden board you spin to meet ten cheeses, headlines with pictures inside, recipe cards that stack, and oven steam you wipe away to see the melt.</span>
+          <span class="tags"><span>Spin the board</span><span>Wipe the steam</span><span>Stacked recipes</span><span>Cheese board order</span></span>
+          <span class="go">Open the fun site &rarr;</span>
+        </span>
+      </a>
+    </div>
+    <div class="shared">
+      <strong>In both</strong>
+      <ul><li>Cheese list with WhatsApp ordering</li><li>WhatsApp-style chat assistant</li><li>Ten cheeses with real Raka packs</li><li>Twelve recipes</li><li>Grazing board bookings</li><li>Trade orders</li><li>Kalpa&rsquo;s welcome video</li><li>Google Maps and live opening hours</li><li>Instagram, Facebook and WhatsApp</li></ul>
+    </div>
+    <footer>Prepared as a pitch for Raka Milk Processors Ltd, Nyeri. Brand material belongs to Raka Cheese. Laptop first; best viewed full screen.</footer>
+  </div>
+<script>
+  (function () {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || matchMedia('(hover: none)').matches) return;
+    document.querySelectorAll('.card').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--rx', ((0.5 - (e.clientY - r.top) / r.height) * 5).toFixed(2) + 'deg');
+        el.style.setProperty('--ry', (((e.clientX - r.left) / r.width - 0.5) * 5).toFixed(2) + 'deg');
+      });
+      el.addEventListener('pointerleave', function () { el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); });
+    });
+  })();
+</script>
+</body>
+</html>
