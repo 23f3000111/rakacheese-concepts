@@ -24,7 +24,8 @@
       '<h2 class="pm__title">' + esc(p.name) + '</h2>' +
       '<p class="pm__desc">' + esc(p.desc) + '</p>' +
       '<div class="pm__moods">' + moods.map(function (m) { return '<span>' + RK.icon(m.icon) + esc(m.name) + '</span>'; }).join('') +
-      p.uses.map(function (u) { return '<span class="is-use">' + esc(u) + '</span>'; }).join('') + '</div>' +
+      p.uses.filter(function (u) { return !moods.some(function (m) { return m.name.toLowerCase() === u.toLowerCase(); }); })
+        .map(function (u) { return '<span class="is-use">' + esc(u) + '</span>'; }).join('') + '</div>' +
       '<form class="pm__buy" data-product="' + p.id + '">' +
       '<fieldset><legend>Pick a size</legend><div class="pm__packs">' + p.packs.map(function (k, i) {
         return '<label><input type="radio" name="pack" value="' + k.id + '"' + (i === (p.def || 0) ? ' checked' : '') + '><span>' + esc(k.label) + '</span></label>';
